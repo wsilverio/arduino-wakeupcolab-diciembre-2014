@@ -27,20 +27,20 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## CONHECENDO A PLACA DO ARDUINO
  
-<p align=center>![UNO](img/arduino_Uno_Rev3_breadboard.png)</p>
+<p align=center>![UNO](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/arduino_Uno_Rev3_breadboard.png)</p>
 
 ## CONHECENDO UM DATASHEET
 * [ATmega328 datasheet](http://www.atmel.com/Images/doc8161.pdf) (pdf) 
 
 ## ATMEGA328 DIAGRAMA
-<p align=center>![block](img/block.png)</p>
+<p align=center>![block](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/block.png)</p>
 
 ## ARDUINO IDE
-<p align=center>![IDE](img/Arduino1Blink.png)</p>
+<p align=center>![IDE](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/Arduino1Blink.png)</p>
 
 ## CONHECENDO O ESQUEMA ELETRICO
   
-<p align=center>![EQM](img/martes_schem.png)</p>
+<p align=center>![EQM](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/martes_schem.png)</p>
   
 * alimentação
 	* símbolos
@@ -49,7 +49,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## CONHECENDO A PROTOBOARD
 
-<p align=center>![PROTO](img/breadboard2.png)</p>  
+<p align=center>![PROTO](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/breadboard2.png)</p>  
 
 * nós
 
@@ -75,7 +75,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 	
 * ligando led na protoboard
 
-<p align=center>![led_proto](img/martes1_bb.png)</p>
+<p align=center>![led_proto](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/martes1_bb.png)</p>
   
 ### arquivo [martes1.ino](martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
