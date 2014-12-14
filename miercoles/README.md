@@ -46,7 +46,7 @@ modos de operação
 ##### FOTOTRANSISTOR
 <p align=center><img src="img/PHTRANS_schem.png"></p>
 
-### arquivo [miercoles1.ino](miercoles1/miercoles.ino)
+### arquivo [miercoles1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles1/miercoles1.ino)
 
 #### descrição
 aciona um LED toda vez que o feixe infravermelho é interrompido.
@@ -72,7 +72,7 @@ if(botaoPressionado()){
 }
 ```
 
-### arquivo [miercoles2.ino](miercoles2/miercole2.ino)
+### arquivo [miercoles2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles2/miercoles2.ino)
 
 #### descrição
 aciona os LEDs proporcional à tensão na entrada analógica (bargraph).
@@ -216,7 +216,7 @@ y = map(x, 0, 100, 100, 0); // inversao
 note que o limite superior pode ser menor que o limite inferior (y, no exemplo acima).  
 na linguagem [Processing](https://processing.org/reference/map_.html), o retorno é do tipo **float** (flutuante), já no Arduino o retorno é do tipo **long** (valores de ponto flutuante são truncados).
 
-### arquivo [miercoles3.ino](miercoles3/miercoles3.ino)
+### arquivo [miercoles3.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles3/miercoles3.ino)
 
 #### descrição
 aciona um LED toda vez que o feixe infravermelho é refletido.
@@ -249,7 +249,7 @@ este programa armazena o menor e o maior valor retornado pelo sensor durante a c
 * qualquer valor será maior/igual a 0
 * qualquer valor será menor/igual a 1023
 
-### arquivo [miercoles4.ino](miercoles4/miercoles4.ino)
+### arquivo [miercoles4.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles4/miercoles4.ino)
 
 #### descrição
 aciona o LED quando o nível do som ultrapassar um limiar.
