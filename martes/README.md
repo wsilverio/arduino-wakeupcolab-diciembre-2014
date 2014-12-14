@@ -195,8 +195,8 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 	* estado
 	* ligação
 
-<p align=center>![botao_led](img/botao_led_schem.png)</p>
-<p align=center>![martes2](martes2/martes2_schem.png)</p>
+<p align=center><img src="img/botao_led_schem.png"></p>
+<p align=center><img src="martes2/martes2_schem.png"></p>
 
 * *LED invertido
 
