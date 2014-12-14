@@ -27,7 +27,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## CONHECENDO A PLACA DO ARDUINO
  
-<p align=center>![UNO](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/arduino_Uno_Rev3_breadboard.png)</p>
+<p align=center><img src="img/arduino_Uno_Rev3_breadboard.png"></p>
 
 ## CONHECENDO UM DATASHEET
 * [ATmega328 datasheet](http://www.atmel.com/Images/doc8161.pdf) (pdf) 
@@ -36,11 +36,11 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 <p align=center><img src="img/block.png"></p>
 
 ## ARDUINO IDE
-<p align=center>![IDE](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/Arduino1Blink.png)</p>
+<p align=center><img src="/img/Arduino1Blink.png"></p>
 
 ## CONHECENDO O ESQUEMA ELETRICO
   
-<p align=center>![EQM](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/martes_schem.png)</p>
+<p align=center><img src="/img/martes_schem.png"></p>
   
 * alimentação
 	* símbolos
@@ -49,7 +49,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## CONHECENDO A PROTOBOARD
 
-<p align=center>![PROTO](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/breadboard2.png)</p>  
+<p align=center><img src="/img/breadboard2.png"></p>  
 
 * nós
 
@@ -75,7 +75,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 	
 * ligando led na protoboard
 
-<p align=center>![led_proto](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/martes1_bb.png)</p>
+<p align=center><img src="/img/martes1_bb.png"></p>
   
 ### arquivo [martes1.ino](martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
@@ -182,7 +182,7 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 * para tempos inferiores a 1ms, há o comando [delayMicroseconds]((http://arduino.cc/en/Reference/DelayMicroseconds)
 
 ### sequencial de LEDs
-<p align=center>![seqleds](martes_extra/martes_extra.png)</p>  
+<p align=center><img src="martes_extra/martes_extra.png"></p>  
 
 * criar um novo sketch e fazer um programa que pisque os LEDs em sequência  
 
@@ -214,9 +214,9 @@ retorna uma mensagem quando o botão é pressionado.
 #### comunicação serial
 
 **comunicação serial / paralela**  
-<p align=center>![paralela](img/paralelo.png)</p>
-<p align=center>![serial](img/serial.png)</p>
-<p align=center>![seriak_bits](img/serial_bits.png)</p>
+<p align=center><img src="img/paralelo.png"></p>
+<p align=center><img src="img/serial.png"></p>
+<p align=center><img src="img/serial_bits.png"></p>
   
   
 ##### comando [Serial.begin()](http://arduino.cc/en/Serial/Begin)
@@ -448,10 +448,10 @@ while(dalmatas <= 100){
 
 #### DEBOUNCING
 ##### contato ideal
-<p align=center>![ideal](img/switch_debounce_03_med.jpg)</p>  
+<p align=center><img src="img/switch_debounce_03_med.jpg"></p>  
 <br />
 ##### contato real
-<p align=center>![bounce](img/switch_debounce_04_med.jpg)</p>
+<p align=center><img src="img/switch_debounce_04_med.jpg"></p>
 
 * uma das técnicas de debouncing via software é
 	- aguardar 5ms
