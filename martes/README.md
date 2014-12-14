@@ -36,11 +36,11 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 <p align=center><img src="img/block.png"></p>
 
 ## ARDUINO IDE
-<p align=center><img src="/img/Arduino1Blink.png"></p>
+<p align=center><img src="img/Arduino1Blink.png"></p>
 
 ## CONHECENDO O ESQUEMA ELETRICO
   
-<p align=center><img src="/img/martes_schem.png"></p>
+<p align=center><img src="img/martes_schem.png"></p>
   
 * alimentação
 	* símbolos
@@ -49,7 +49,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## CONHECENDO A PROTOBOARD
 
-<p align=center><img src="/img/breadboard2.png"></p>  
+<p align=center><img src="img/breadboard2.png"></p>  
 
 * nós
 
@@ -75,7 +75,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 	
 * ligando led na protoboard
 
-<p align=center><img src="/img/martes1_bb.png"></p>
+<p align=center><img src="img/martes1_bb.png"></p>
   
 ### arquivo [martes1.ino](martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
