@@ -33,7 +33,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 * [ATmega328 datasheet](http://www.atmel.com/Images/doc8161.pdf) (pdf) 
 
 ## ATMEGA328 DIAGRAMA
-<p align=center>![block](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/block.png)</p>
+<p align=center><img src="img/block.png"></p>
 
 ## ARDUINO IDE
 <p align=center>![IDE](https://raw.githubusercontent.com/wsilverio/arduino-wakeupcolab-diciembre-2014/master/martes/img/Arduino1Blink.png)</p>
