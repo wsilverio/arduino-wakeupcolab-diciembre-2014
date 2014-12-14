@@ -166,7 +166,3 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 		- Facultad de Arquitectura y Diseño de la Universidad de Los Andes (Colômbia)
 
 ## BATE PAPO
-<br />
-<br />
-***
-> *imagens: [Fritzing](http://fritzing.org/)
