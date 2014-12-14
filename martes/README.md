@@ -77,7 +77,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 <p align=center><img src="img/martes1_bb.png"></p>
   
-### arquivo [martes1.ino](martes1/martes1.ino)
+### arquivo [martes1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
 
 #### descrição
@@ -200,7 +200,7 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 
 * *LED invertido
 
-### arquivo [martes2.ino](martes2/martes2.ino)
+### arquivo [martes2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes2/martes2.ino)
 
 #### descrição
 retorna uma mensagem quando o botão é pressionado.
@@ -318,7 +318,7 @@ Serial.print("Ola, mundo.\n"); // escreve a frase e depois pula uma linha
 Serial.println("Ola, mundo."); // escreve a frase e depois pula uma linha
 ```
 uma sequência de caracteres também é chamada de [string](http://arduino.cc/en/Reference/String) (e são definidas dentro de aspas duplas).
-### arquivo [martes3.ino](martes3/martes3.ino)
+### arquivo [martes3.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes3/martes3.ino)
 
 #### descrição
 incrementa o contador toda vez que o botão é pressionado.
