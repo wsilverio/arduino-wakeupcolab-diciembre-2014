@@ -29,7 +29,7 @@ apesar de ter um encapsulamento parecido com um LED, o TIL78 é um foto**transis
 * chanfro -> coletor
 
 ##### TRANSISTOR (NPN)
-<p align=center>![NPN](img/NPN_schem.png)</p>
+<p align=center><img src="img/NPN_schem.png"></p>
 
 modos de operação
 * ativo
@@ -41,10 +41,10 @@ modos de operação
 ##### SATURAÇÃO
 * Ic <= B * Ib
 
-<p align=center>![NPN_CHAVE](img/NPN_CHAVE_schem.png)</p>
+<p align=center><img src="img/NPN_CHAVE_schem.png"></p>
 
 ##### FOTOTRANSISTOR
-<p align=center>![foto_transistor](img/PHTRANS_schem.png)</p>
+<p align=center><img src="img/PHTRANS_schem.png"></p>
 
 ### arquivo [miercoles1.ino](miercoles1/miercoles.ino)
 
@@ -53,7 +53,7 @@ aciona um LED toda vez que o feixe infravermelho é interrompido.
 * conceitos:
 	- if...else
 
-<p align=center>![emrec_infra](miercoles1/miercoles1.png)</p>
+<p align=center><img src="miercoles1/miercoles1.png"></p>
 
 ##### estrutura de controle [if...else](http://arduino.cc/en/Reference/Else)
 como já vimos, a estrutura **if()** testa uma ou mais condições. caso o teste resulte em **verdadeiro**, o escopo do if() é executado.  
@@ -81,7 +81,7 @@ aciona os LEDs proporcional à tensão na entrada analógica (bargraph).
     - entrada analógica
     - laço for()
     
-<p align=center>![bargraph](miercoles2/miercoles2.png)</p>
+<p align=center><img src="miercoles2/miercoles2.png"></p>
 
 #### qualificador [const](http://arduino.cc/en/Reference/Const)
 vínhamos tratando os pinos como constantes através da diretiva `#define`. porém, como iremos trabalhar com um array, precisaremos do qualificador **const**, que modifica a variável para "somente leitura".
@@ -120,7 +120,7 @@ for (inicializacao; condicao_para_teste; incremento) {
 	// comandos a serem repetidos
 }
 ```
-<p align=center>![for](img/ForLoopIllustrated.png)</p>
+<p align=center><img src="img/ForLoopIllustrated.png"></p>
 
 este tipo de laço é muito usado com arrays.  
 exemplo, definir uma quantidade de pinos como saída:
@@ -185,7 +185,7 @@ como vimos na Primeira Lei de Ohm, a tensão sobre um resistor é proporcional �
 varição da resistência implica na variação da tensão.
 
 ##### POTENCIÔMETRO
-<p align=center>![pot](img/pot.png)</p>
+<p align=center><img src="img/pot.png"></p>
 
 * função
 * como funciona
@@ -224,7 +224,7 @@ aciona um LED toda vez que o feixe infravermelho é refletido.
 	- calibração de sensores
     - millis()
 
-<p align=center>![fototransistor](miercoles1/miercoles1.png)</p>
+<p align=center><img src="miercoles1/miercoles1.png"></p>
 
 #### função [millis()](http://arduino.cc/en/Reference/Millis)
 a função **millis** retorna o número de milissegundos (ms) desde que o Arduino começou a rodar o programa (último reset). seu retorno é do tipo **unsigned long**. seu **overflow** (estouro - volta a zero) acontece em em aprox. 50 dias.  
@@ -254,7 +254,7 @@ este programa armazena o menor e o maior valor retornado pelo sensor durante a c
 #### descrição
 aciona o LED quando o nível do som ultrapassar um limiar.
 
-<p align=center>![mic](miercoles4/miercoles4_schem.png)</p>
+<p align=center><img src="miercoles4/miercoles4_schem.png"></p>
 
 ## BATE PAPO
 
