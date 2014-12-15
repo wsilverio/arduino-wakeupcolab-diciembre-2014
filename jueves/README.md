@@ -52,7 +52,7 @@ analogWrite(led, 200);
 
 obs: não é necessário definir o pino como saída quando se for trabalhar somente como saída PWM.
 
-### arquivo [jueves1.ino]()
+### arquivo [jueves1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/jueves/jueves1/jueves1.ino)
 #### descrição
 controla o brilho de um led alto-brilho a partir de um potenciômetro.
 * conceitos:
@@ -60,7 +60,7 @@ controla o brilho de um led alto-brilho a partir de um potenciômetro.
 
 <p align=center><img src="jueves1/jueves1_schem.png"></p>
 
-### arquivo [jueves2.ino]()
+### arquivo [jueves2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/jueves/jueves2/jueves2.ino)
 #### descrição
 controla o brilho de um led RGB com o efeito "fade".
 * conceitos:
@@ -86,7 +86,7 @@ o servo-motor é um motor que tem sua posição angular definida através de sin
 #### sinal
 <p align=center><img src="img/servo_01.jpg"></p>
 
-### arquivo [jueves3.ino]()
+### arquivo [jueves3.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/jueves/jueves3/jueves3.ino)
 #### descrição
 controla a posição do servo-motor através do potenciômetro.
 * conceitos:
@@ -161,7 +161,7 @@ produz um zumbido em resposta a uma frequência.
 **LDR** (Light Dependent Resistor) é um resistor que tem sua resistência alterada conforme a intensidade de luz sobre si. geralmente sua resisdência diminui à medida que a luminosidade aumenta.  
 a forma mais comum de se trabalhar com um LDR e um Arduino é ligar o componente em série com um resistor e captar a variação da tensão (no LDR ou no resistor).
 
-### arquivo [jueves4.ino]()
+### arquivo [jueves4.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/jueves/jueves4/jueves4.ino)
 #### descrição
 uma espécie de [Teremim](http://pt.wikipedia.org/wiki/Teremim) de luz. varia a frequência do som conforme a luminosidade.
 * conceitos:
