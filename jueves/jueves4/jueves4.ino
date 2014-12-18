@@ -35,7 +35,7 @@ void setup() {
     tempo = millis();
 
     // apaga o led e aguarda 1s
-    digitalWrite(led, LOW);
+    digitalWrite(led, LOW); 
     delay(1000);
     // indica uma nova medicao
     digitalWrite(led, HIGH);
