@@ -40,7 +40,7 @@ void setup() {
     // indica uma nova medicao
     digitalWrite(led, HIGH);
 
-    // calibracao durante 5s
+    // calibracao durante 5s 
     while((millis() - tempo) < 5000){
         // armazena o valor do sensor
         int leitura = analogRead(ldr);
