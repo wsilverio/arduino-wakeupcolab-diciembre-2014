@@ -31,7 +31,16 @@ void setup() {
         }
     }
 
-    // calibracao durante 5s
+    // armazena o tempo desde o ultimo reset
+    tempo = millis();
+
+    // apaga o led e aguarda 1s
+    digitalWrite(led, LOW); 
+    delay(1000);
+    // indica uma nova medicao
+    digitalWrite(led, HIGH);
+
+    // calibracao durante 5s 
     while((millis() - tempo) < 5000){
         // armazena o valor do sensor
         int leitura = analogRead(ldr);
@@ -41,26 +50,17 @@ void setup() {
         }
     }
 
-    // apaga o led e aguarda 1s
-    digitalWrite(led, LOW);
-    delay(1000);
-    // indica uma nova medicao
-    digitalWrite(led, HIGH);
-
-    // armazena o tempo desde o ultimo reset
-    tempo = millis();
-
     // apaga o led
-    digitalWrite(led, LOW);
+    digitalWrite(led, LOW); 
 
     delay(1000);
 }
 
 void loop() {
-	// converte o valor do sensor para um valor entre 50 e 4kHz
-	int freq = map(analogRead(ldr), valMin, valMax, 50, 4000);
-	// toca a frequencia por 20ms
-	tone(buzzer, freq, 20);
-	
-	delay(10);
+    // converte o valor do sensor para um valor entre 50 e 4kHz
+    int freq = map(analogRead(ldr), valMin, valMax, 50, 4000);
+    // toca a frequencia por 20ms
+    tone(buzzer, freq, 20);
+    
+    delay(10);
 }
