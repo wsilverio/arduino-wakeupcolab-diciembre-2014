@@ -51,7 +51,7 @@ void setup() {
     }
 
     // apaga o led
-    digitalWrite(led, LOW);
+    digitalWrite(led, LOW); 
 
     delay(1000);
 }
