@@ -31,6 +31,15 @@ void setup() {
         }
     }
 
+    // armazena o tempo desde o ultimo reset
+    tempo = millis();
+
+    // apaga o led e aguarda 1s
+    digitalWrite(led, LOW);
+    delay(1000);
+    // indica uma nova medicao
+    digitalWrite(led, HIGH);
+
     // calibracao durante 5s
     while((millis() - tempo) < 5000){
         // armazena o valor do sensor
@@ -40,15 +49,6 @@ void setup() {
             valMax = leitura;
         }
     }
-
-    // apaga o led e aguarda 1s
-    digitalWrite(led, LOW);
-    delay(1000);
-    // indica uma nova medicao
-    digitalWrite(led, HIGH);
-
-    // armazena o tempo desde o ultimo reset
-    tempo = millis();
 
     // apaga o led
     digitalWrite(led, LOW);
