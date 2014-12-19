@@ -57,10 +57,10 @@ void setup() {
 }
 
 void loop() {
-	// converte o valor do sensor para um valor entre 50 e 4kHz
-	int freq = map(analogRead(ldr), valMin, valMax, 50, 4000);
-	// toca a frequencia por 20ms
-	tone(buzzer, freq, 20);
-	
-	delay(10);
+    // converte o valor do sensor para um valor entre 50 e 4kHz
+    int freq = map(analogRead(ldr), valMin, valMax, 50, 4000);
+    // toca a frequencia por 20ms
+    tone(buzzer, freq, 20);
+    
+    delay(10);
 }

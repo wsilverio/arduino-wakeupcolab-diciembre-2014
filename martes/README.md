@@ -179,7 +179,7 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 ```
 > * o parâmetro é do tipo [unsigned long](http://arduino.cc/en/Reference/UnsignedLong), i.e, aceita um valor máximo de 4.294.967.295
 * ~~este comando deve ser usado com cautela~~
-* para tempos inferiores a 1ms, há o comando [delayMicroseconds]((http://arduino.cc/en/Reference/DelayMicroseconds)
+* para tempos inferiores a 1ms, há o comando [delayMicroseconds](http://arduino.cc/en/Reference/DelayMicroseconds)
 
 ### sequencial de LEDs
 <p align=center><img src="martes_extra/martes_extra.png"></p>  
