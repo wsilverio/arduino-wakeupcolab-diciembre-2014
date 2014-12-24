@@ -65,8 +65,8 @@ Resumo dos comandos:
 - navegue até o clone do repositório e exiba seu conteúdo
     - `cd arduino-wakeupcolab-diciembre-2014`
     - `ls`
- 
- 
+
+
 - exemplo de estrutura de um sketchbook
 	- ~/
 		- sketchbook/
@@ -179,10 +179,11 @@ O Sublime Text é um editor de texto e código-fonte que usaremos como "IDE" par
 - [Arduino O Documentário (2010)](http://vimeo.com/31389230)
 - Interaction Design Institute Ivrea (Itália)
 	- [Processing](https://processing.org/)
-		- Documentário [Hello World! Processing](http://www.7luas.com.br/todos/pesquisa/artigo/hello-world-processing/) 
+		- Documentário [Hello World! Processing](http://www.7luas.com.br/todos/pesquisa/artigo/hello-world-processing/)
 	- [Wiring](http://wiring.org.co/)
 		- Facultad de Arquitectura y Diseño de la Universidad de Los Andes (Colômbia)
 <br />
 <br />
-***
+***  
+
 > * [1]: na verdade, as distribuições são [GNU/Linux](https://www.gnu.org/)
