@@ -29,15 +29,6 @@ permalink: /arduino-wakeup/
 - Alicates de bico e corte (opcional)
 - Multímetro (opcional)
 
-<!--## AGENDA  
-
-* [lunes](#)
-* [martes](#)
-* [miércoles](#)
-* [viernes](#)
-* [jueves](#)
-* [~~sábado~~](#)-->
-
 ## LISTA DE COMPONENTES
 Obs: este kit é à parte do valor do curso.  
 
@@ -85,8 +76,8 @@ Obs: este kit é à parte do valor do curso.
 ## QUANDO E ONDE?
 - De 15 a 19 de dezembro de 2014, a partir das 19h.
 - A [Wake Up Colab](http://www.wakeupcolab.com/conceito/) é um laboratório colaborativo, espaço de coworking e exposições artísticas e também um bar e café.  
-<!--<p align=center>
-![olho](http://static.squarespace.com/static/5380aa2de4b037295d96ed9f/t/53c55c7de4b0caa47b290726/1416437210051/?format=400w)  </p>-->
+
+<p align=center><img src=http://static.squarespace.com/static/5380aa2de4b037295d96ed9f/t/53c55c7de4b0caa47b290726/1416437210051/?format=400w></p>
 
 ## O CURSO PODE SAIR DE GRAÇA. QUER UMA BOLSA?
 - Mande um e-mail para wakeupcolab@gmail.com com as informações:
