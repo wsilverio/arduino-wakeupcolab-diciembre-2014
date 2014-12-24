@@ -185,4 +185,4 @@ O Sublime Text é um editor de texto e código-fonte que usaremos como "IDE" par
 <br />
 <br />
 ***
-> *[1]: na verdade, as distribuições são [GNU/Linux](https://www.gnu.org/)
+> * [1]: na verdade, as distribuições são [GNU/Linux](https://www.gnu.org/)
