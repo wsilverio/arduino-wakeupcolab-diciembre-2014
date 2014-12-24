@@ -10,23 +10,25 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 
 ## AGENDA  
 * Arduino**s**
-* conhecendo a placa Arduino
-* conhecendo um datasheet
-* diagrama do ATmega328
+* Conhecendo a placa Arduino
+* Conhecendo um datasheet
+* Diagrama do ATmega328
 * Arduino IDE
-* conhecendo o esquema elétrico
-* conhecendo a placa de protótipo (*protoboard*)
-* ligando leds
-* lendo botões
-* comunicação serial
-* bate papo
+* Conhecendo o esquema elétrico
+* Conhecendo a placa de protótipo (*protoboard*)
+* Ligando leds
+* Lendo botões
+* Comunicação serial
+* Bate papo
 
 ## ARDUINOS
 
-* [lista de placas, shields, kits e acessórios oficiais](http://arduino.cc/en/Main/Products)
+* [Lista de placas, shields, kits e acessórios oficiais](http://arduino.cc/en/Main/Products)
 
 ## CONHECENDO A PLACA DO ARDUINO
- 
+* Identificando os componentes  
+</br>
+</br>
 <p align=center><img src="img/arduino_Uno_Rev3_breadboard.png"></p>
 
 ## CONHECENDO UM DATASHEET
@@ -39,50 +41,57 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 <p align=center><img src="img/Arduino1Blink.png"></p>
 
 ## CONHECENDO O ESQUEMA ELETRICO
-  
+* Identificando a alimentação, dispositivos e nós
+</br>
+</br>  
 <p align=center><img src="img/martes_schem.png"></p>
-  
-* alimentação
-	* símbolos
-* dispositivos
-* nós
 
 ## CONHECENDO A PROTOBOARD
-
+* Identificando trilhas e nós
+</br>
+</br>
 <p align=center><img src="img/breadboard2.png"></p>  
-
-* nós
 
 ## LIGANDO LEDS
 
 ### RESISTOR
-* conhecendo o componente
-	* função
-	* símbolo
-	* ~~polaridade~~
-	* código de cores
+Resumidamente, resistores são usados para controlar a corrente elétrica e com isso obter queda de tensão.
+* Conhecendo o componente
+	- Símbolo
+	- Código de cores
+	- ~~Polaridade~~
 
-* primeira lei de Ohm
+<p align=center><img src="img/res_schem.png"></p>
+<p align=center><img src="img/res_bb.png"></p>
+
+* Primeira lei de Ohm
 	* `V = R * I`
+</br>
+</br>
+<p align=center><img src="img/Ohm_s_Law.jpg"></p>
 
 ### DIODO EMISSOR DE LUZ
-* conhecendo o componente
-	* função
-	* símbolo
-	* polaridade
-	* queda de tensão no led (~ 2V)
-	* ligação em série
-	
-* ligando led na protoboard
+* Conhecendo o componente
+	* Função
+	* Símbolo
+	* Polaridade
+	* Queda de tensão no led (~ 2V)
+	* Ligação em série
+
+<p align=center><img src="img/led.png"></p>
+
+* Ligando led na protoboard
 
 <p align=center><img src="img/martes1_bb.png"></p>
+  
+**A placa Arduino Uno tem um led conectado ao pino 13.**
   
 ### arquivo [martes1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
 
 #### descrição
-alterna o estado de um led a cada 0,5s.  
-* conceitos:
+Alterna o estado de um led a cada 0,5s.  
+* Conceitos:
 	- funções principais
     - saída digital
     - loop
@@ -95,11 +104,11 @@ void setup(){
 	// comandos de configuração
 }
 ```
-a função **setup()** é executada a cada **reset**. devem estar contidos nela os comandos a serem executados somente uma vez. ex.:
-* definir os pinos de entrada/saída  
-* configurar a velocidade da comunicação serial
+A função **setup()** é executada a cada **reset**. Devem estar contidos nela os comandos a serem executados somente uma vez. Ex.:
+* Definir os pinos de entrada/saída  
+* Configurar a velocidade da comunicação serial
 
-veremos mais sobre declaração de funções no decorrer do minicurso.
+Veremos mais sobre declaração de funções no decorrer do minicurso.
 
 ##### função [loop()](http://arduino.cc/en/Reference/Loop)
 ```c
@@ -107,59 +116,59 @@ void loop(){
 	// comandos a serem executados repetidamente
 }
 ```
-a função **loop** é executada logo após a função **setup**. devem estar contidos nela os comandos a serem executados repetidamente. ex.:
-* monitorar o estado de um sensor
-* interação
+A função **loop** é executada logo após a função **setup**. Devem estar contidos nela os comandos a serem executados repetidamente. Ex.:
+* Monitorar o estado de um sensor
+* Interação
 
 ##### diretiva [#define](http://arduino.cc/en/Reference/Define)
-permite que o programa atribua um **nome** a um valor **constante** antes de ser **compilado**.
-constantes no arduino "não ocupam memória" - (!= variáveis).  
+Permite que o programa atribua um **nome** a um valor **constante** antes de ser **compilado**.  
+Constantes no arduino "não ocupam memória" - (!= variáveis).  
   
-a definição de uma constante é dada pela sintaxe: `#define nome valor`  
-exemplo:
+A definição de uma constante é dada pela sintaxe: `#define nome valor`  
+Exemplo:
 ```c
 #define led    13 // atribui o valor '13' ao nome 'led'
 #define botao_1 6 // atribui o valor  '6' ao nome 'botao_1'
 #define botaoA  7 // atribui o valor  '7' ao nome 'botaoA'
 ```
-> - o caracter antífen **#** é necessário
-- são permitidos somente números, letras (sem caractéres especiais) e subtraços nos nomes   
+> - O caracter antífen **#** é necessário
+- São permitidos somente números, letras (sem caractéres especiais) e subtraços nos nomes   
 	- ex.: `#define botão 6`  implica em erro
-- nomes de constantes não podem começar com números  
+- Nomes de constantes não podem começar com números  
 	- ex.: `#define 1botao 6` implica em erro
-- a atribuição é feita sem o sinal de `=` e não termina com `;`
+- A atribuição é feita sem o sinal de `=` e não termina com `;`
 	- ex.: `#define botao = 6` implica em erro
 	- ex.: `#define botao 6;` implica em erro
 	
-o Arduino já tem algumas constantes próprias (LOW, HIGH, PI, INPUT, etc), veja a biblioteca [Arduino.h](https://github.com/arduino/Arduino/blob/master/hardware/arduino/cores/arduino/Arduino.h)
+O Arduino já tem algumas constantes próprias (LOW, HIGH, PI, INPUT, etc), veja a biblioteca [Arduino.h](https://github.com/arduino/Arduino/blob/master/hardware/arduino/cores/arduino/Arduino.h)
 
 
 ##### comando [pinMode()](http://arduino.cc/en/Reference/PinMode)
-o comando **pinMode** especifíca se determinado pino será ++entrada++ ou ++saída++ **digital**.
-pode ser utilizado em **todos** os pinos do Arduino, inclusive os pinos de entrada analógica (A0 ... A5).
-a definição de I/O é dada pela sintaxe: `pinMode(pino, modo);` onde
-* pino: **0-13**, **A0-A5** (modelo Uno, por ex.)
-* modo: **INPUT**, **OUTPUT**, ou **INPUT_PULLUP**
+O comando **pinMode** especifíca se determinado pino será ++entrada++ ou ++saída++ **digital**.  
+Pode ser utilizado em **todos** os pinos do Arduino, inclusive os pinos de entrada analógica (A0 ... A5) quando utilizados como pinos digitais.  
+A definição de I/O é dada pela sintaxe: `pinMode(pino, modo);` onde
+* `pino`: **0-13**, **A0-A5** (modelo Uno, por ex.)
+* `modo`: **INPUT**, **OUTPUT**, ou **INPUT_PULLUP**
 
-exemplo:
+Exemplo:
 ```c
 pinMode(led, OUTPUT); // especifíca o pino 'led' como saída
 pinMode(sensor, INPUT);  // especifíca o pino 'sensor' como entrada
 pinMode(botao, INPUT_PULLUP);  // especifíca o pino 'botao' como entrada-pullup
 ```
-> * o caracter `;` indica o fim do comando
+> * O caracter `;` indica o fim do comando
 * camelCase
-* os **argumentos** são separados por **vírgula**
-* pinMode() é uma função vazia, i.e, não retorna nada. veja em na [definição da função](https://github.com/arduino/Arduino/blob/master/hardware/arduino/cores/arduino/wiring_digital.c).
+* Os **argumentos** são separados por **vírgula**
+* pinMode() é uma função vazia, i.e, não retorna nada. Veja em na [definição da função](https://github.com/arduino/Arduino/blob/master/hardware/arduino/cores/arduino/wiring_digital.c).
 
 ##### comando [digitalWrite()](http://arduino.cc/en/Reference/DigitalWrite)
-o comando **digitalWrite** escreve um valor alto (**HIGH**) ou baixo (**LOW**) em um pino configurado anteriormente como **saída digital**.
-pode ser utilizado em **todos** os pinos do Arduino, inclusive nos pinos de entrada analógica (A0 ... A5).
-a operação é dada pela sintaxe: `digitalWrite(pino, valor);` onde
+O comando **digitalWrite** escreve um valor alto (**HIGH**) ou baixo (**LOW**) em um pino configurado anteriormente como **saída digital**.  
+Pode ser utilizado em **todos** os pinos do Arduino, inclusive nos pinos de entrada analógica (A0 ... A5).  
+A operação é dada pela sintaxe: `digitalWrite(pino, valor);` onde
 * pino: **0-13**, **A0-A5** (modelo Uno, por ex.)
 * valor: **HIGH** ou **LOW**
 
-exemplo:
+Exemplo:
 ```c
 digitalWrite(led1, HIGH); // deixa em nível alto o pino 'led1'
 digitalWrite(led2, LOW); // deixa em nível baixo o pino 'led2'
@@ -167,91 +176,99 @@ digitalWrite(led2, LOW); // deixa em nível baixo o pino 'led2'
 > * mesmas considerações sobre o comando pinMode()
 
 ##### comando [delay()](http://arduino.cc/en/Reference/Delay)
-o comando **delay** "pausa" o programa por um tempo (especificado em **milisegundos**).
-a operação é dada pela sintaxe: `delay(tempo);` onde
-* tempo: número de milisegundos para a pausa
+O comando **delay** "pausa" o programa por um tempo (especificado em **milisegundos**).  
+A operação é dada pela sintaxe: `delay(tempo);` onde
+* `tempo`: número de milisegundos para a pausa
 
-exemplo:
+Exemplo:
 ```c
 delay(1000); // aguarda 1000ms = 1s
 delay(500); // aguarda 500ms = 0,5s
 delay(60000); // aguarda 60000ms = 60s = 1min
 ```
-> * o parâmetro é do tipo [unsigned long](http://arduino.cc/en/Reference/UnsignedLong), i.e, aceita um valor máximo de 4.294.967.295
-* ~~este comando deve ser usado com cautela~~
-* para tempos inferiores a 1ms, há o comando [delayMicroseconds](http://arduino.cc/en/Reference/DelayMicroseconds)
+> * O parâmetro é do tipo [unsigned long](http://arduino.cc/en/Reference/UnsignedLong), i.e, aceita um valor máximo de 4.294.967.295
+* ~~Este comando deve ser usado com cautela~~
+* Para tempos inferiores a 1ms, há o comando [delayMicroseconds](http://arduino.cc/en/Reference/DelayMicroseconds)
 
-### sequencial de LEDs
-<p align=center><img src="martes_extra/martes_extra.png"></p>  
-
-* criar um novo sketch e fazer um programa que pisque os LEDs em sequência  
+## [martes_extra](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes_extra/): sequencial de LEDs
+* Criar um novo sketch que pisque os LEDs em sequência  
 
 ## LENDO BOTOES
 ### BOTÕES
-
-* conhecendo o componente
-	* função
-	* símbolo
-	* estado
-	* ligação
-
+</br>
+<p align=center><img src="img/bot.png"></p>  
 <p align=center><img src="img/botao_led_schem.png"></p>
-<p align=center><img src="martes2/martes2_schem.png"></p>
 
-* *LED invertido
+* Conhecendo o componente
+	* Função
+	* Símbolo
+	* Estado
+	* Ligação
+
+<p align=center><img src="img/bot_res.png"></p>
 
 ### arquivo [martes2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes2/martes2.ino)
 
 #### descrição
-retorna uma mensagem quando o botão é pressionado.
-* conceitos
-	- entrada digital
-    - resistor pull-up
-    - princípio de variáveis
-    - princípio de estrutura de decisão
-    - comunicação serial
+Retorna uma mensagem quando o botão é pressionado.
+
+<p align=center><img src="martes2/martes2_schem.png"></p>
+<p align=center><img src="martes2/martes2_bb.png"></p>
+
+</br>
+* Conceitos
+	- Entrada digital
+    - Resistor pull-up
+    - Princípio de variáveis
+    - Princípio de estrutura de decisão
+    - Comunicação serial
 
 #### comunicação serial
-
-**comunicação serial / paralela**  
-<p align=center><img src="img/paralelo.png"></p>
+É um tipo de comunicação que transmite (e/ou recebe) um bit por vez, no estilo **trem de pulso**. Ocupam poucos fios (gerlamente são 2 fios para troca de informação).  
 <p align=center><img src="img/serial.png"></p>
-<p align=center><img src="img/serial_bits.png"></p>
-  
+
+Já a comunicação paralela envia a informação com todos os bits de uma vez, com isso, ocupa mais vias de transmissão.
+<p align=center><img src="img/paralelo.png"></p>
   
 ##### comando [Serial.begin()](http://arduino.cc/en/Serial/Begin)
-define a taxa de transmissão para a comunicação **serial UART**.  
-* argumento (bps)
+Define a taxa de transmissão para a comunicação **serial UART**.  
+* Argumento (bps)
 	* 300, 600, 1200, 2400, 4800, **9600**, 14400, 19200, 28800, 38400, 57600, ou 115200
     * particular
-* pinos
-* dispositivos
-* ligação
-	* tx -> rx
-    * rx -> tx
-* conversor USB
+* Pinos
+	- Arduino Uno:
+    	- TX: pino 1
+        - RX: pino 0
+* Dispositivos
+	- GPS, GSM, Bluetooth
+* Ligação
+	* TX -> RX
+    * RX -> TX
+* Conversor USB
+	- A maioria das placas Arduino contém um conversor USB. Isso permite trocar informações com o computador, como faremos no exemplo `martes2.ino`
 * **Serial** é um objeto
+	- se você não conhece programação orientada a objetos, esta não é uma informação relevante até então.
 
 ##### argumento [INPUT_PULLUP](http://arduino.cc/en/Reference/Constants)
-o chip Atmega do Arduino tem resistores *pull-up* internos.
-* função
+O chip Atmega do Arduino tem resistores *pull-up* internos.
+* Função
 	- substituir resistores pull-up externos :thumbsup:
-    - evite usar o pino 13 como entrada
-    	- porquê
+    
+* [**Evite usar o pino 13 como entrada**](http://arduino.cc/en/Tutorial/DigitalPins)
 
 ##### variável [boolean](http://arduino.cc/en/Reference/BooleanVariables)
-reserva um espaço da memória e atribui um nome (e um valor) a ela.  
-a definição de uma variável é dada pela sintaxe: `tipo nome;` ou `tipo nome = valor;`  
-exemplo:
+Reserva um espaço da memória e atribui um nome (e um valor) a ela.  
+A definição de uma variável é dada pela sintaxe: `tipo nome;` ou `tipo nome = valor;`  
+Exemplo:
 ```c
 boolean estado; // variável do tipo booleano com nome 'estado'
 boolean pisca = true; // variável do tipo booleano com o nome 'pisca' e valor = 'verdadeiro'
 boolean trava = false;
 ```
-> - o caracter igual (**=**) indica a atribuição
-> - o caracter ponto-e-vírgula (**;**) indica o fim da declaração
-> - os nomes das variáveis devem respeitar as mesmas restrições das constantes
-> - variáveis do tipo booleano aceitam somente dois tipos de valores:
+> - O caracter igual (**=**) indica a atribuição
+> - O caracter ponto-e-vírgula (**;**) indica o fim da declaração
+> - Os nomes das variáveis devem respeitar as mesmas restrições das constantes
+> - Variáveis do tipo booleano aceitam somente dois tipos de valores:
 	* verdadeiro:
     	- true
         - HIGH
@@ -262,8 +279,8 @@ boolean trava = false;
         - LOW
         - 0 (lógico / binário)
         - 0 volt (dos pinos)
-* analogia com ligado/desligado, solto/pressionado
-* uma vez declarada, só se atribui o valor. exemplo:  
+* Analogia com ligado/desligado, solto/pressionado
+* Uma vez declarada, só se atribui o valor. exemplo:  
 
 ```c  
 // [...]
@@ -272,44 +289,50 @@ digitalWrite(led, estado);
 estado = false; // <---
 digitalWrite(led, estado);
 ```
-> - apesar de receber apenas 2 valores, variáveis booleanas ocupam 8 bits da memória.
+> - Apesar de receber apenas 2 valores, variáveis booleanas ocupam 8 bits da memória.
 	- program counter (PC)
-> - voltaremos a falar sobre variáveis no decorrer do curso  
+> - Voltaremos a falar sobre variáveis no decorrer do curso  
     
 ##### comando [digitalRead()](http://arduino.cc/en/Reference/DigitalRead)
-o comando **digitalRead** retorna o valor booleano (verdadeiro ou falso) de um determinado pino configurado anteriormente como **entrada digital**.
-pode ser utilizado em **todos** os pinos do Arduino, inclusive nos pinos de entrada analógica (A0 ... A5).
-a operação é dada pela sintaxe: `'local de retorno' digitalRead(pino);` onde
-* pino: **0-13**, **A0-A5** (modelo Uno, por ex.)
-* local de retorno: variável ou argumento de uma função
+O comando **digitalRead** retorna o valor booleano (verdadeiro ou falso) de um determinado pino configurado anteriormente como **entrada digital**.  
+Pode ser utilizado em **todos** os pinos do Arduino, inclusive nos pinos de entrada analógica (A0 ... A5).  
+A operação é dada pela sintaxe: `'local de retorno' digitalRead(pino);` onde
+* `pino`: **0-13**, **A0-A5** (modelo Uno, por ex.)
+* `local de retorno`: variável ou argumento de uma função
 
-exemplo:
+Exemplo:
 ```c
 boolean estado_sensor = digitalRead(sensor);
 soma_digitos(!digitalRead(botao));
 ```
 
 ##### comando [if()](http://arduino.cc/en/Reference/DigitalRead)
-o comando **if** faz parte das **estruturas de controle** (veremos outras no decorrer do curso). ele é usado para testar condições. o programa executará seu escopo caso a condição seja **verdadeira**.
-a operação é dada pela sintaxe: `if(condicao e comparacao){/*escopo*/}` onde
-* condição: aquilo a ser verificado
-* escopo: rotina a ser executada caso a(s) condição seja verdadeira
-* comparação: ver próximo tópico
+O comando **if** faz parte das **estruturas de controle** (veremos outras no decorrer do curso). Ele é usado para testar condições. O programa executará seu corpo caso a condição seja **verdadeira**.  
+A operação é dada pela sintaxe: `if(condicao e comparacao){/*escopo*/}` onde
+* `condição`: aquilo a ser verificado
+* `escopo`: rotina a ser executada caso a(s) condição seja verdadeira
+* `comparação`: ver próximo tópico
 
 **operadores de comparação**
-- x == y: (x igual a y)
-- x != y: (x diferente de y)
-- x <  y: (x menor que y)
-- x >  y: (x maior que y)
-- x <= y: (x menor ou igual a y)
-- x >= y: (x maior ou igual a y)  
+- **x == y**: (x igual a y)
+- **x != y**: (x diferente de y)
+- **x <  y**: (x menor que y)
+- **x >  y**: (x maior que y)
+- **x <= y**: (x menor ou igual a y)
+- **x >= y**: (x maior ou igual a y)  
   
-
-veremos como relacionar operadores booleanos no decorrer do curso
+Exemplo:
+```c
+boolean estado = digitalRead(botao);
+if(estado == LOW){
+	// acende o led se o estado do botao for LOW
+	digitalWrite(led, HIGH);
+}
+```
 	
 ##### comando [Serial.print()](http://arduino.cc/en/Serial/Print)
-escreve um (ou mais) caracteres [ASCII](http://www.asciitable.com/) no pino TX.
-exemplo:
+Escreve um (ou mais) caracteres [ASCII](http://www.asciitable.com/) no pino TX.  
+Exemplo:
 ```c
 Serial.print(3); // escreve '3' (em ASCII)
 int tempo = 15;
@@ -317,46 +340,50 @@ Serial.print(tempo); // escreve '1', depois '5' (em ASCII)
 Serial.print("Ola, mundo.\n"); // escreve a frase e depois pula uma linha
 Serial.println("Ola, mundo."); // escreve a frase e depois pula uma linha
 ```
-uma sequência de caracteres também é chamada de [string](http://arduino.cc/en/Reference/String) (e são definidas dentro de aspas duplas).
+Uma sequência de caracteres também é chamada de [string](http://arduino.cc/en/Reference/String) (e são definidas dentro de aspas duplas).
 ### arquivo [martes3.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes3/martes3.ino)
 
 #### descrição
-incrementa o contador toda vez que o botão é pressionado.
-* conceitos
-	- variáveis globais
-    - operações aritméticas
-    - estrutura de repetição while()
-    - técnica de debouncing via software
+Incrementa o contador toda vez que o botão é pressionado.
+
+<p align=center><img src="martes2/martes2_schem.png"></p>
+<p align=center><img src="martes2/martes2_bb.png"></p>
+
+* Conceitos
+	- Variáveis globais
+    - Operações aritméticas
+    - Estrutura de repetição while()
+    - Técnica de debouncing via software
 
 #### variável [int](http://arduino.cc/en/Reference/Int)
-reserva um espaço da memória (2 bytes) e atribui um nome (e um valor) a ela.  
-enquanto variáveis do tipo booleano aceitam somentes valores **verdadeiro** e **falso**, variáveis do tipo **int**eiro aceitam valores numéricos entre
+Reserva um espaço da memória (2 bytes) e atribui um nome (e um valor) a ela.  
+Enquanto variáveis do tipo booleano aceitam somentes valores **verdadeiro** e **falso**, variáveis do tipo **int**eiro aceitam valores numéricos entre
 **-32.768** to **32.767**.  
-exemplo:
+Exemplo:
 ```c
 int tempMin = -3;
 int tempMax = 21;
 ```
-> - para números maiores que 32.767
+> - Para números maiores que 32.767
 	- [unsigned int](http://arduino.cc/en/Reference/UnsignedInt): **0** a **65.535**
     - [long](http://arduino.cc/en/Reference/Long): **-2.147.483.648** a **2.147.483.647**
     - [unsigned long](http://arduino.cc/en/Reference/UnsignedLong): **0** a **4.294.967.295**
 
-- [operadores aritméticos](http://arduino.cc/en/Reference/Arithmetic)
+- [Operadores aritméticos](http://arduino.cc/en/Reference/Arithmetic)
 	- **+** (adição)
 	- **-** (subtração)
 	- ***** (multiplicação)
 	- **/** (divisão)
 	- **%** (resto)  
 
-exemplo:  
+Exemplo:  
 ```c
 int a = 2, b = 5;
 
 int soma = a + b + 3; // soma: 10
 int sub = b - a; // sub: 3
 sub = a - b; // sub: -3
-int mult = 1 + a * b; // mult: 11
+int mult = 1 + a * b; // mult: 11 (prioridade da multiplicacao)
 mult = (1 + a) * b; // mult: 15
 int div = b / a; // div: 2
 div = a / b; // div: 0
@@ -364,7 +391,7 @@ int resto = b % a; // resto: 1
 resto = a % b; // resto: 2
 ```  
 
-- [operadores compostos](http://arduino.cc/en/Reference/IncrementCompound)
+- [Operadores compostos](http://arduino.cc/en/Reference/IncrementCompound)
 	- **++** [(incremento)](http://arduino.cc/en/Reference/Increment)
 	- **--** [(decremento)](http://arduino.cc/en/Reference/Increment)
 	- **+=** (adição composta)
@@ -374,25 +401,30 @@ resto = a % b; // resto: 2
 	- **&=** (E composto)
 	- **|=** (OU composto)  
 
-exemplo:  
+Exemplo:  
 - a = 2, b = 5
-	- `a++` -> a: 3
-	- `b--` -> b: 4
-	- `a += 2` -> a: 4
-	- `b -= 2` -> b: 3
-	- `b *= 4` -> b: 20
-	- `a /= 2` -> a: 1
-	- `b = a++` -> b: 2, a: 3
-	- `b = ++a` -> a: 3, b: 3
- 
+	- `a++` -> a: 3 (o mesmo que `a = a + 1`)
+	- `b--` -> b: 4 (o mesmo que `b = b - 1`)
+	- `a += 2` -> a: 4 (o mesmo que `a = a + 2`)
+	- `b -= 2` -> b: 3 (o mesmo que `b = b - 2`)
+	- `b *= 4` -> b: 20 (o mesmo que `b = b * 4`)
+	- `a /= 2` -> a: 1 (o mesmo que `a = a / 2`)
+	- `b = a++` -> b: 2, a: 3 (o mesmo que `b = a` e depois `a = a + 1`)
+	- `b = ++a` -> a: 3, b: 3 (o mesmo que `a = a + 1` e depois `b = a`)
+
+É importante destacar que em operações entre inteiros, o resultado também é um número inteiro:
+```c
+int a = 2, b = 5;
+int div = b / a; // div: 2, e nao 2.5
+```
     
 #### variáveis globais
-uma variável global existe durante toda a execução do programa e pode ser acessada por qualquer função. já uma variável local existe somente durante a execução do seu **escopo** (isso permite uma economia de memória) e não é acessível para outros blocos/funções (veremos mais sobre variáveis locais no decorrer do curso).  
-variáveis globais geralmente são usadas quando se deseja acessá-las de qualquer lugar ou então não perder seu valor ao final de um escopo ou laço.  
+Uma variável global existe durante toda a execução do programa e pode ser acessada por qualquer função. Já uma variável local existe somente durante a execução do seu **escopo** (isso permite uma economia de memória), porém e não é acessível para outros blocos/funções (veremos mais sobre variáveis locais no decorrer do curso).  
+Variáveis globais geralmente são usadas quando se deseja acessá-las de qualquer lugar ou então não perder seu valor ao final de um escopo ou laço.  
 
-- sua declaração deve vir antes de sua chamada
+- Sua declaração deve vir antes de sua chamada
 
-exemplo:
+Exemplo:
 ```c
 // [...]
 int contador; // declaracao da variavel
@@ -407,7 +439,7 @@ void loop(){
     // [...]
 }
 ```
-contra exemplo:
+Contra exemplo:
 ```c
 void setup(){
     // [...]
@@ -423,21 +455,21 @@ void loop(){
 ```
 
 #### operador booleano [! (not)](http://arduino.cc/en/Reference/Boolean)
-inverte o estado do operando.
+Inverte o estado do operando.
 - **!true** é equivalente a **false**
 - **!false** é equivalente a **true**  
 
-esta operação é bastante útil quando trabalhamos com entradas pull-up.  
+Esta operação é bastante útil quando trabalhamos com entradas pull-up.  
  - `if(digitalRead(botao) == LOW)` é equivalente a `if(!digitalRead(botao))` 
- 	- o escopo '**{}**' do **if()** só é executado quando a condição dos operadores for **verdadeira**.
+ 	- O escopo '**{}**' do **if()** só é executado quando a condição dos operadores for **verdadeira**.
     - digitalRead(botao) -> **false**: botão pressionado
     - !digitalRead(botao) -> **true**: botão pressionado
     - digitalRead(botao) -> **true**: botão não pressionado
     - !digitalRead(botao) -> **false**: botão não pressionado
     
 #### laço [while()](http://arduino.cc/en/Reference/While)
-permanece em loop enquanto sua expressão for **verdadeira**.  
-exemplo:
+Permanece em loop enquanto sua expressão for **verdadeira**.  
+Exemplo:
 ```c
 // [...]
 while(dalmatas <= 100){
@@ -447,18 +479,20 @@ while(dalmatas <= 100){
 ```
 
 #### DEBOUNCING
-##### contato ideal
+##### contato ideal de uma chave
+
 <p align=center><img src="img/switch_debounce_03_med.jpg"></p>  
-<br />
+
 ##### contato real
+
 <p align=center><img src="img/switch_debounce_04_med.jpg"></p>
 
-* uma das técnicas de debouncing via software é
+* Uma das técnicas de debouncing via software é
 	- aguardar 5ms
 	- aguardar a mudança de estado (loop)
 	- aguardar mais 5ms
 
-exemplo:  
+Exemplo:  
 ```c
 se(botaoPressionado()){
 	// [...]
@@ -467,15 +501,17 @@ se(botaoPressionado()){
 	aguarda_5ms();
 }
 ```
-exemplo Arduino:
+Exemplo Arduino:
 ```c
 // verifica se o botao foi pressionado
 if(!digitalRead(botao)){
-	// [...]
+	// inverte o estado do led
+    digitalWrite(led, !digitalRead(led));
 	
+    // debouncing
 	delay(5); // aguarda 5ms
 	while(!digitalRead(botao)); // fica em laco ate o botao ser solto (voltar ao nivel alto) (!HIGH = LOW = false)
-	delay(5); // aguarda 5ms
+	delay(5); // aguarda mais 5ms
 }
 
 ```
