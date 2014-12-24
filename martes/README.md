@@ -32,7 +32,7 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 <p align=center><img src="img/arduino_Uno_Rev3_breadboard.png"></p>
 
 ## CONHECENDO UM DATASHEET
-* [ATmega328 datasheet](http://www.atmel.com/Images/doc8161.pdf) (pdf) 
+* [ATmega328 datasheet](http://www.atmel.com/Images/doc8161.pdf) (pdf)
 
 ## ATMEGA328 DIAGRAMA
 <p align=center><img src="img/block.png"></p>
@@ -83,9 +83,9 @@ Resumidamente, resistores são usados para controlar a corrente elétrica e com 
 * Ligando led na protoboard
 
 <p align=center><img src="img/martes1_bb.png"></p>
-  
+
 **A placa Arduino Uno tem um led conectado ao pino 13.**
-  
+
 ### arquivo [martes1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes1/martes1.ino)
 > [referência da linguagem Arduino/Wiring](http://arduino.cc/en/Reference/HomePage)
 
@@ -123,7 +123,7 @@ A função **loop** é executada logo após a função **setup**. Devem estar co
 ##### diretiva [#define](http://arduino.cc/en/Reference/Define)
 Permite que o programa atribua um **nome** a um valor **constante** antes de ser **compilado**.  
 Constantes no arduino "não ocupam memória" - (!= variáveis).  
-  
+
 A definição de uma constante é dada pela sintaxe: `#define nome valor`  
 Exemplo:
 ```c
@@ -132,14 +132,14 @@ Exemplo:
 #define botaoA  7 // atribui o valor  '7' ao nome 'botaoA'
 ```
 > - O caracter antífen **#** é necessário
-- São permitidos somente números, letras (sem caractéres especiais) e subtraços nos nomes   
+- São permitidos somente números, letras (sem caractéres especiais) e subtraços nos nomes
 	- ex.: `#define botão 6`  implica em erro
 - Nomes de constantes não podem começar com números  
 	- ex.: `#define 1botao 6` implica em erro
 - A atribuição é feita sem o sinal de `=` e não termina com `;`
 	- ex.: `#define botao = 6` implica em erro
 	- ex.: `#define botao 6;` implica em erro
-	
+
 O Arduino já tem algumas constantes próprias (LOW, HIGH, PI, INPUT, etc), veja a biblioteca [Arduino.h](https://github.com/arduino/Arduino/blob/master/hardware/arduino/cores/arduino/Arduino.h)
 
 
@@ -205,7 +205,7 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 	* Estado
 	* Ligação
 
-<p align=center><img src="img/bot_res.png"></p>
+<p align=center><img src="img/bot_led_schem.png"></p>
 
 ### arquivo [martes2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/martes/martes2/martes2.ino)
 
@@ -229,7 +229,7 @@ Retorna uma mensagem quando o botão é pressionado.
 
 Já a comunicação paralela envia a informação com todos os bits de uma vez, com isso, ocupa mais vias de transmissão.
 <p align=center><img src="img/paralelo.png"></p>
-  
+
 ##### comando [Serial.begin()](http://arduino.cc/en/Serial/Begin)
 Define a taxa de transmissão para a comunicação **serial UART**.  
 * Argumento (bps)
@@ -253,7 +253,7 @@ Define a taxa de transmissão para a comunicação **serial UART**.
 O chip Atmega do Arduino tem resistores *pull-up* internos.
 * Função
 	- substituir resistores pull-up externos :thumbsup:
-    
+
 * [**Evite usar o pino 13 como entrada**](http://arduino.cc/en/Tutorial/DigitalPins)
 
 ##### variável [boolean](http://arduino.cc/en/Reference/BooleanVariables)
@@ -292,7 +292,7 @@ digitalWrite(led, estado);
 > - Apesar de receber apenas 2 valores, variáveis booleanas ocupam 8 bits da memória.
 	- program counter (PC)
 > - Voltaremos a falar sobre variáveis no decorrer do curso  
-    
+
 ##### comando [digitalRead()](http://arduino.cc/en/Reference/DigitalRead)
 O comando **digitalRead** retorna o valor booleano (verdadeiro ou falso) de um determinado pino configurado anteriormente como **entrada digital**.  
 Pode ser utilizado em **todos** os pinos do Arduino, inclusive nos pinos de entrada analógica (A0 ... A5).  
@@ -320,7 +320,7 @@ A operação é dada pela sintaxe: `if(condicao e comparacao){/*escopo*/}` onde
 - **x >  y**: (x maior que y)
 - **x <= y**: (x menor ou igual a y)
 - **x >= y**: (x maior ou igual a y)  
-  
+
 Exemplo:
 ```c
 boolean estado = digitalRead(botao);
@@ -329,7 +329,7 @@ if(estado == LOW){
 	digitalWrite(led, HIGH);
 }
 ```
-	
+
 ##### comando [Serial.print()](http://arduino.cc/en/Serial/Print)
 Escreve um (ou mais) caracteres [ASCII](http://www.asciitable.com/) no pino TX.  
 Exemplo:
@@ -417,7 +417,7 @@ Exemplo:
 int a = 2, b = 5;
 int div = b / a; // div: 2, e nao 2.5
 ```
-    
+
 #### variáveis globais
 Uma variável global existe durante toda a execução do programa e pode ser acessada por qualquer função. Já uma variável local existe somente durante a execução do seu **escopo** (isso permite uma economia de memória), porém e não é acessível para outros blocos/funções (veremos mais sobre variáveis locais no decorrer do curso).  
 Variáveis globais geralmente são usadas quando se deseja acessá-las de qualquer lugar ou então não perder seu valor ao final de um escopo ou laço.  
@@ -460,13 +460,13 @@ Inverte o estado do operando.
 - **!false** é equivalente a **true**  
 
 Esta operação é bastante útil quando trabalhamos com entradas pull-up.  
- - `if(digitalRead(botao) == LOW)` é equivalente a `if(!digitalRead(botao))` 
+ - `if(digitalRead(botao) == LOW)` é equivalente a `if(!digitalRead(botao))`
  	- O escopo '**{}**' do **if()** só é executado quando a condição dos operadores for **verdadeira**.
     - digitalRead(botao) -> **false**: botão pressionado
     - !digitalRead(botao) -> **true**: botão pressionado
     - digitalRead(botao) -> **true**: botão não pressionado
     - !digitalRead(botao) -> **false**: botão não pressionado
-    
+
 #### laço [while()](http://arduino.cc/en/Reference/While)
 Permanece em loop enquanto sua expressão for **verdadeira**.  
 Exemplo:
@@ -507,7 +507,7 @@ Exemplo Arduino:
 if(!digitalRead(botao)){
 	// inverte o estado do led
     digitalWrite(led, !digitalRead(led));
-	
+
     // debouncing
 	delay(5); // aguarda 5ms
 	while(!digitalRead(botao)); // fica em laco ate o botao ser solto (voltar ao nivel alto) (!HIGH = LOW = false)
