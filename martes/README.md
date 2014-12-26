@@ -65,7 +65,10 @@ Resumidamente, resistores são usados para controlar a corrente elétrica e com 
 <p align=center><img src="img/res_bb.png"></p>
 
 * Primeira lei de Ohm
-	* `V = R * I`
+	* `V = R * I`, onde
+		- V: tensão [Volt: V]
+		- R: resistência [Ohm]
+		- I: corrente [Ampere: A]
 </br>
 </br>
 <p align=center><img src="img/Ohm_s_Law.jpg"></p>
@@ -75,8 +78,29 @@ Resumidamente, resistores são usados para controlar a corrente elétrica e com 
 	* Função
 	* Símbolo
 	* Polaridade
+		- Por se um diodo, a os LEDs acendem somente em um sentido (com exceção dos LEDs bipolares). Em seu funcionamento comum, o sentido da corrente é anodo -> catodo.
+		- Geralmente o catodo do LED é a parte que tem um chanfro (com exceção do LED RGB de 4 terminais - na dúvida, consulte o datasheet):
+			- na imagem abaixo, esquerda, o chanfro está do lado esquerdo
+			- na imagem abaixo, direita, o catodo é o pino de baixo (pino 2)
+		- Nem sempre o maior terminal é o catodo. Isso não é regra.
 	* Queda de tensão no led (~ 2V)
+		- Todo diodo tem uma queda de tensão ao ser polarizado. Essa queda tensão varia conforme a cor do LED.
+	* Corrente
+		- A corrente de um LED varia de acordo com a cor, tipo, fabricante, etc.
+		- Vamos aproximar para ~10mA
 	* Ligação em série
+		- Geralmente se usa um resistor em série para controlar a corrente de um LED (veja no tópico anterior "CONHECENDO O ESQUEMA ELETRICO"). Como estamos interessados somente na **corrente** do LED, tanto faz o resistor estar antes ou depois do LED nesta série.
+	* Exemplo do cálculo de resistor para um LED com uma alimentação de 5V:
+		- Da Primeira Lei de Ohm, temos que:
+			- `V = R * I` -> `R = V / I`, onde:
+				- R: valor do resistor
+				- V: queda de tensão no resistor
+				- I: corrente da série (corrente do LED)
+		- Neste exemplo, a alimentação é de 5V:
+			- `Vresistor = Vcc - Vled` -> `Vresistor = 5 - 2 = 3V`
+		- Substituindo os valores
+			- `R = 3 / 10m` = `300 ohm`
+			- O valor comercial recomendado é **330 ohm**
 
 <p align=center><img src="img/led.png"></p>
 
@@ -203,7 +227,16 @@ delay(60000); // aguarda 60000ms = 60s = 1min
 	* Função
 	* Símbolo
 	* Estado
+		- Há 2 tipos primitivos de botão
+			- Normalmente Aberto (NA)
+				- Fecha o contado ao ser pressionado
+					- imagem abaixo
+			- Normalmente Fechado (NF)
+				- Abre o contado ao ser pressionado
 	* Ligação
+		- No exemplo abaixo, o botão permite que o Arduino "enxergue", pelo pino 12, 5V (botão solto) e 0V (botão presionado).
+		- A função do resistor, neste caso, é evitar que se dê curto-circuito entre o 5V e o Terra ao pressionar o botão. Como estamos interessados somente no valor a tensão, podemos colocar um resistor alto (~10k Ohm).
+		- O Arduino já tem um resistor interno (resistor pull-up) para esses casos.
 
 <p align=center><img src="img/bot_led_schem.png"></p>
 

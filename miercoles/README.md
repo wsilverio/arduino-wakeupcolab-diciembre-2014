@@ -9,61 +9,68 @@ Este trabalho está licenciado com uma Licença [Creative Commons - Atribuição
 ![cc-by](https://i.creativecommons.org/l/by/4.0/88x31.png)  
 
 ## AGENDA  
-* emissor e receptor infravermelho
-* entradas analógicas
-	* potenciometro
-	* infravermelho
-	* microfone
-* bate papo
+* Emissor e receptor infravermelho
+* Entradas analógicas
+	* Potenciometro
+	* Infravermelho
+	* Microfone
+* Bate papo
 
 ## EMISSOR E RECEPTOR INFRAVERMELHO
 #### EMISSOR TIL32
-um LED que emiter luz com comprimento de 940nm (infra-vermelho).
+Um LED que emiter luz com comprimento de 940nm (infra-vermelho).
 * [datasheet](http://pdf.datasheetarchive.com/datasheetsmain/Datasheets-X2/DSA1206000-174.pdf) (pdf)
-* queda de tensão: 1,6 V
-* corrente: 20 mA
+* Queda de tensão: 1,6 V
+* Corrente: 20 mA
 
 #### RECEPTOR TIL78
-apesar de ter um encapsulamento parecido com um LED, o TIL78 é um foto**transistor**.
-* [datasheet](http://pdf.datasheetarchive.com/datasheetsmain/Datasheets-X2/DSA1206000-124.pdf) (pdf)
-* chanfro -> coletor
+Apesar de ter um encapsulamento parecido com um LED, o TIL78 é um foto**transistor**.
+* [Datasheet](http://pdf.datasheetarchive.com/datasheetsmain/Datasheets-X2/DSA1206000-124.pdf) (pdf)
+* Chanfro -> coletor
 
 ##### TRANSISTOR (NPN)
 <p align=center><img src="img/NPN_schem.png"></p>
 
-modos de operação
-* ativo
-	- sensor analógico
-* saturação
-	- sensor digital
-* corte
+Modos de operação
+* Ativo
+	- Sensor analógico (variação de tensão)
+* Saturação
+	- Sensor digital (chave fechada)
+* Corte
+	- Sensor digital (chave aberta)
 
 ##### SATURAÇÃO
-* Ic <= B * Ib
+* `Ic <= B * Ib`, onde:
+	- Ic: correnta do coletor
+	- B: ganho do transistor
+	- Ib: corrente de base
 
 <p align=center><img src="img/NPN_CHAVE_schem.png"></p>
 
 ##### FOTOTRANSISTOR
+É um transitor cuja baje é excitada por luz.
 <p align=center><img src="img/PHTRANS_schem.png"></p>
 
 ### arquivo [miercoles1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles1/miercoles1.ino)
 
 #### descrição
-aciona um LED toda vez que o feixe infravermelho é interrompido.
-* conceitos:
+Aciona um LED toda vez que o feixe infravermelho é interrompido.
+* Conceitos:
 	- if...else
 
 <p align=center><img src="miercoles1/miercoles1.png"></p>
+<p align=center><img src="miercoles1/miercoles1_3_bb.png"></p>
+
 
 ##### estrutura de controle [if...else](http://arduino.cc/en/Reference/Else)
-como já vimos, a estrutura **if()** testa uma ou mais condições. caso o teste resulte em **verdadeiro**, o escopo do if() é executado.  
-o escopo do **else** é executado quando o teste resultar em **falso**.
+Como já vimos, a estrutura **if()** testa uma ou mais condições. Caso o teste resulte em **verdadeiro**, o escopo do if() é executado.  
+O escopo do **else** é executado quando o teste resultar em **falso**.
 * se(teste)
 	- comandos a serem executados caso o teste resulte em **verdadeiro**
 * senão
 	- comandos a serem executados caso o teste resulte em **falso**
 
-exemplo:
+Exemplo:
 ```c
 if(botaoPressionado()){
 	acendeLed();
@@ -75,19 +82,20 @@ if(botaoPressionado()){
 ### arquivo [miercoles2.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles2/miercoles2.ino)
 
 #### descrição
-aciona os LEDs proporcional à tensão na entrada analógica (bargraph).
-* conceitos:
+Aciona os LEDs proporcional à tensão na entrada analógica (bargraph).
+* Conceitos:
 	- array
     - entrada analógica
     - laço for()
     
 <p align=center><img src="miercoles2/miercoles2.png"></p>
+<p align=center><img src="miercoles2/miercoles2_bb.png"></p>
 
 #### qualificador [const](http://arduino.cc/en/Reference/Const)
-vínhamos tratando os pinos como constantes através da diretiva `#define`. porém, como iremos trabalhar com um array, precisaremos do qualificador **const**, que modifica a variável para "somente leitura".
+Vínhamos tratando os pinos como constantes através da diretiva `#define`. Porém, como iremos trabalhar com um array de variáveis, precisaremos do qualificador **const**, que modifica a variável para "somente leitura".
 
 #### arrays
-um array (muitas vezes chamado, em português, por **vetor**), é um conjuto de 'variáveis' (do mesmo tipo) que podem ser acessadas através de um índice. torna mais 'elegante' ([ao menos do ponto de vista técnico](http://www.arduino.cc/en/Tutorial/KnightRider)) trabalhar com 'grande' conjunto de dados do mesmo tipo com um array.
+Um array (muitas vezes chamado, em português, por **vetor**), é um conjuto de 'variáveis' (do mesmo tipo) que podem ser acessadas através de um índice. Torna mais 'elegante' ([ao menos do ponto de vista técnico](http://www.arduino.cc/en/Tutorial/KnightRider)) trabalhar com 'grande' conjunto de dados do mesmo tipo com um array.
 
 **DECLARAÇÃO**
 ```c
@@ -98,7 +106,7 @@ char mensagem[6] = "hello"; // uma string e' um vetor do tipo char
 ```
 
 **ACESSO**  
-os elementos de um array são acessados através de seu **índice**. o primeiro elemento de um array é zero (0). o índice referenciado dentro de colchetes **[ ]**.  
+Os elementos de um array são acessados através de seu **índice**. O primeiro elemento de um array é zero (0). O índice referenciado dentro de colchetes **[ ]**.  
 exemplo:
 ```c
 // [...]
@@ -110,11 +118,18 @@ Serial.print(arrayPinos[2]); // imprime '8'
 arrayPinos[1] = 5; // modifica o array para {4, 5, 8}
 ```
 
-obs: cuidado para não tentar acessar um índice que não existe em um array. nem sempre o compilador acusará este erro.
+Obs: cuidado para não tentar acessar um índice que não existe em um array. Nem sempre o compilador acusará este erro.  
+Exemplo:
+```c
+int meuArray[2] = {0, 1};
+Serial.print(meuArray[0]); // ok
+Serial.print(meuArray[1]); // ok
+Serial.print(meuArray[2]); // erro de acesso
+```
 
 #### laço [for()](http://arduino.cc/en/Reference/For)
-assim como o **while**, o **for** também é um laço de repetição. a diferença é que, no for, inicialização, condição e incremento são feitas no **cabeçalho**.  
-sintaxe:
+Assim como o **while**, o **for** também é um laço de repetição. A diferença é que, no for, inicialização, condição e incremento são feitas no **cabeçalho**.  
+Sintaxe:
 ```c
 for (inicializacao; condicao_para_teste; incremento) {
 	// comandos a serem repetidos
@@ -122,8 +137,8 @@ for (inicializacao; condicao_para_teste; incremento) {
 ```
 <p align=center><img src="img/ForLoopIllustrated.png"></p>
 
-este tipo de laço é muito usado com arrays.  
-exemplo, definir uma quantidade de pinos como saída:
+Este tipo de laço é muito usado com arrays.  
+Exemplo, definir uma quantidade de pinos como saída:
 
 ```c
 int pinos[4] = {2, 3, 4, 5};
@@ -131,16 +146,17 @@ for (int indice = 0; indice < 4; indice++) {
 	pinMode(pinos[indice], OUTPUT);
 }
 ```
-outro exemplo, piscar um led 10 vezes:
+Outro exemplo, piscar um led 10 vezes:
 ```c
 // [...]
 for (int qtde = 0; qtde < 10; qtde++) {
 	digitalWrite(led, HIGH);
     delay(100);
     digitalWrite(led, LOW);
+    delay(100);
 }
 ```
-outro exemplo, acender somente os LEDs de **índice par** no sentido 'contrário':  
+Outro exemplo, acender somente os LEDs de **índice par** no sentido 'contrário':  
 ```c
 // [...]
 int leds[7] = {2, 3, 4, 5, 6, 7, 8};
@@ -153,29 +169,29 @@ for (int indice = 6; indice >= 0; indice -= 2) {
 ```
 
 #### comando [analogRead()](http://arduino.cc/en/Reference/AnalogRead)
-as entradas digitais são capazes de detectar somente níveis lógicos (5 e 0V). já as entradas analógicas são capazes de detectar níveis de tensão **entre** 0 e 5V.  
-* entradas digitais
+As entradas digitais são capazes de detectar somente níveis lógicos (5 e 0V). Já as entradas analógicas são capazes de detectar níveis de tensão **entre** 0 e 5V.  
+* Entradas digitais
 	- 0 **ou** 5V
-* entradas analógicas
+* Entradas analógicas
 	- 0 **a** 5V
     
-o comando **analogRead()** retorna o valor da leitura analógica de um determinado pino. nem todos os pinos suportam este tipo de leitura. os que aceitam estão especificados como A0, A1, ..., A5 (Arduino Uno).  
-a leitura tem a resolução de 10 bits, i.e, trabalhando com VCC de 5V:
+O comando **analogRead()** retorna o valor da leitura analógica de um determinado pino. Nem todos os pinos suportam este tipo de leitura. Os que aceitam estão especificados como A0, A1, ..., A5 (Arduino Uno).  
+A leitura tem a resolução de 10 bits, i.e, trabalhando com VCC de 5V:
 * 5 / (2^10) = 5 / 1024 = 0,0049 V/unidade
 	- 0V -> 0
     - 5V -> 1023
 
-obs: essas portas não precisam ser declaradas como entradas analógicas (~~pinMode()~~).  
-elas também podem trabalhar como entradas/saídas digitais. porém, o contrário não é válido.  
+Obs: essas portas não precisam ser declaradas como entradas analógicas (~~pinMode()~~).  
+Elas também podem trabalhar como entradas/saídas digitais. Porém, o contrário não é válido (portas digitais como analógicas).  
 
-sua sintaxe é `'local de retorno' analogRead(pino)`.  
-exemplo:
+Sua sintaxe é `'local de retorno' analogRead(pino)`.  
+Exemplo:
 ```c
 // [...]
 int sensorVal = analogRead(A0);
 Serial.println(sensorVal);
 ```
-cada aquisição de leitura leva cerca de 100us.
+Cada aquisição de leitura leva cerca de 100us.
 
 
 ##### QUEDA DE TENSÃO
