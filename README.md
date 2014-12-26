@@ -5,7 +5,7 @@ permalink: /arduino-wakeup/
 ---
 <canvas id="p5-sketch-center" data-processing-sources="{{ site.baseurl }}/assets/pde/arduino_curso_cham.pde" width="400" height="200"></canvas>-->
 
-## inscreva-se: [www.wakeupcolab.com/arduino](http://www.wakeupcolab.com/arduino)
+## ~~inscreva-se: [www.wakeupcolab.com/arduino](http://www.wakeupcolab.com/arduino)~~
 
 ### mini{curso} de Arduino - {15-19}/12/2014
 
