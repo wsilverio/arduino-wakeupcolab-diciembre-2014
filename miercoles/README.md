@@ -48,7 +48,7 @@ Modos de operação
 <p align=center><img src="img/NPN_CHAVE_schem.png"></p>
 
 ##### FOTOTRANSISTOR
-É um transitor cuja baje é excitada por luz.
+É um transitor cuja base é excitada por luz.
 <p align=center><img src="img/PHTRANS_schem.png"></p>
 
 ### arquivo [miercoles1.ino](https://github.com/wsilverio/arduino-wakeupcolab-diciembre-2014/blob/master/miercoles/miercoles1/miercoles1.ino)
