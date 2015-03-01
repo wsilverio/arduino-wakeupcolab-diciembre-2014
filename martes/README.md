@@ -428,7 +428,7 @@ resto = a % b; // resto: 2
 	- **--** [(decremento)](http://arduino.cc/en/Reference/Increment)
 	- **+=** (adição composta)
 	- **-=** (subtração composta)
-	- ***=** (multiplicação composta)
+	- *= (multiplicação composta)
 	- **/=** (divisão composta)
 	- **&=** (E composto)
 	- **|=** (OU composto)  
