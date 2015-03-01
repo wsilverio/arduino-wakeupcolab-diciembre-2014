@@ -78,11 +78,12 @@ Resumidamente, resistores são usados para controlar a corrente elétrica e com 
 	* Função
 	* Símbolo
 	* Polaridade
-		- Por se um diodo, a os LEDs acendem somente em um sentido (com exceção dos LEDs bipolares). Em seu funcionamento comum, o sentido da corrente é anodo -> catodo.
+		- Por ser um diodo, os LEDs acendem somente em um sentido (com exceção dos LEDs bipolares). Em seu funcionamento comum, o sentido da corrente é anodo -> catodo.
 		- Geralmente o catodo do LED é a parte que tem um chanfro (com exceção do LED RGB de 4 terminais - na dúvida, consulte o datasheet):
 			- na imagem abaixo, esquerda, o chanfro está do lado esquerdo
 			- na imagem abaixo, direita, o catodo é o pino de baixo (pino 2)
-		- Nem sempre o maior terminal é o catodo. Isso não é regra.
+<p align=center><img src="img/led.png"></p>
+		- Nem sempre o maior terminal é o catodo.
 	* Queda de tensão no led (~ 2V)
 		- Todo diodo tem uma queda de tensão ao ser polarizado. Essa queda tensão varia conforme a cor do LED.
 	* Corrente
@@ -96,13 +97,11 @@ Resumidamente, resistores são usados para controlar a corrente elétrica e com 
 				- R: valor do resistor
 				- V: queda de tensão no resistor
 				- I: corrente da série (corrente do LED)
-		- Neste exemplo, a alimentação é de 5V:
+		- Neste exemplo, a alimentação (Vcc) é 5V:
 			- `Vresistor = Vcc - Vled` -> `Vresistor = 5 - 2 = 3V`
 		- Substituindo os valores
 			- `R = 3 / 10m` = `300 ohm`
 			- O valor comercial recomendado é **330 ohm**
-
-<p align=center><img src="img/led.png"></p>
 
 * Ligando led na protoboard
 
@@ -132,7 +131,7 @@ A função **setup()** é executada a cada **reset**. Devem estar contidos nela 
 * Definir os pinos de entrada/saída  
 * Configurar a velocidade da comunicação serial
 
-Veremos mais sobre declaração de funções no decorrer do minicurso.
+A palavra **void** indica que a função não retorna nenhum valor. Isto ficará claro mais pra frente, quando vermos mais sobre declaração de funções no decorrer do minicurso.
 
 ##### função [loop()](http://arduino.cc/en/Reference/Loop)
 ```c
@@ -405,7 +404,7 @@ int tempMax = 21;
 - [Operadores aritméticos](http://arduino.cc/en/Reference/Arithmetic)
 	- **+** (adição)
 	- **-** (subtração)
-	- ***** (multiplicação)
+	- * (multiplicação)
 	- **/** (divisão)
 	- **%** (resto)  
 
