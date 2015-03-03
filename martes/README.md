@@ -444,7 +444,7 @@ Exemplo:
 	- `b = a++` -> b: 2, a: 3 (o mesmo que `b = a` e depois `a = a + 1`)
 	- `b = ++a` -> a: 3, b: 3 (o mesmo que `a = a + 1` e depois `b = a`)
 
-É importante destacar que em operações entre inteiros, o resultado também é um número inteiro:
+É importante destacar que em operações entre inteiros o resultado também é um número inteiro:
 ```c
 int a = 2, b = 5;
 int div = b / a; // div: 2, e nao 2.5
